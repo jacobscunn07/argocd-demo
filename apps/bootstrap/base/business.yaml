@@ -1,27 +1,7 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: AppProject
-# metadata:
-#   name: bootstrap
-#   namespace: argocd
-#   finalizers:
-#   - resources-finalizer.argocd.argoproj.io
-# spec:
-#   description: Bootstraps the entire cluster with applications
-#   sourceRepos:
-#   - '*'
-#   destinations:
-#   - namespace: '*'
-#     server: '*'
-#   orphanedResources:
-#     warn: false
-#   clusterResourceWhitelist:
-#   - group: '*'
-#     kind: '*'
----
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: bootstrap
+  name: business
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -30,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/jacobscunn07/argocd-demo
     targetRevision: HEAD
-    path: apps/bootstrap/overlays/kind-bird
+    path: apps/business/overlays/kind-bird
     directory:
       recurse: false
   destination:
