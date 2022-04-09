@@ -31,8 +31,8 @@ spec:
     repoURL: https://github.com/jacobscunn07/argocd-demo
     targetRevision: HEAD
     path: apps/bootstrap/overlays/kind-bird
-    directory:
-      recurse: false
+    # directory:
+    #   recurse: false
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
