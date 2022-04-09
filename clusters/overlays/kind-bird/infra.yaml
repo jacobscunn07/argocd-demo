@@ -6,7 +6,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: default
+  project: bootstrap
   source:
     repoURL: https://github.com/jacobscunn07/argocd-demo
     targetRevision: HEAD
