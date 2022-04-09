@@ -11,8 +11,8 @@ spec:
     repoURL: https://github.com/jacobscunn07/argocd-demo
     targetRevision: HEAD
     path: apps/infra/overlays/kind-bird
-    directory:
-      recurse: false
+    # directory:
+    #   recurse: false
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
@@ -20,7 +20,7 @@ spec:
     automated:
       prune: true
       selfHeal: true
-      allowEmpty: false
+      # allowEmpty: false
     syncOptions:
     - CreateNamespace=true
     - PrunePropagationPolicy=foreground
