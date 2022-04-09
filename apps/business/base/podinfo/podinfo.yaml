@@ -6,7 +6,7 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  project: default
+  project: business
   source:
     repoURL: https://stefanprodan.github.io/podinfo
     targetRevision: "6.1.1"

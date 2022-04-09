@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: infra
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  description: Bootstraps the entire cluster with infrastructure applications
+  sourceRepos:
+  - '*'
+  destinations:
+  - namespace: '*'
+    server: '*'
+  orphanedResources:
+    warn: false
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
